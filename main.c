@@ -3,6 +3,16 @@
 
 int main(void){
 
-    printf("hello world");
+    List head;
+    head.First = nil;
+    head.Last = nil;
+
+    addAkhirNode(&head, 1);
+    addAkhirNode(&head, 2);
+    addAkhirNode(&head, 3);
+    addAwalNode(&head, 0);
+    printList(head);
+    printf("\n");
+    printListReverse(head);
     return 0;
 }
