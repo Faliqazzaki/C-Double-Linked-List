@@ -5,7 +5,7 @@
 *.o
 
 # Abaikan file binary hasil compile
-linkedlist
+Doublelinkedlist
 
 # Abaikan file run script log atau sementara
 *.log

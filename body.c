@@ -73,6 +73,34 @@ void addAkhirNode(List *L, infotype X){
     }
 }
 
+void addTengahNode(List *L, infotype X, infotype Y){
+    // Deklarasi variabel lokal
+    address P = (*L).First;
+    address temp = nil;
+    address nodeList = nil;
+
+    // Begin
+    nodeList = alokasi(X);
+    if(P == nil){
+        printf("tidak ada list....\n");
+        return; 
+    }
+    temp = searchNodeList((*L), Y);
+    if(temp == nil){
+        printf("tidak ada node di list..");
+        return;
+    }
+    nodeList->next = temp->next;
+    nodeList->prev = temp;
+    temp->next = nodeList;
+    if(nodeList->next != nil){
+        nodeList->next->prev = nodeList;
+    }else{
+        (*L).Last = nodeList;   
+    }
+
+}
+
 /* MODUL NON KONTROL */
 
 void printList(List L){
@@ -105,4 +133,18 @@ void printListReverse(List L){
         P = P->prev;
     }
     printf("Null");
+}
+
+address searchNodeList(List L, infotype X){
+    // Deklarasi variabel lokal 
+    address P = (L).First;
+
+    // Begin 
+    while(P != nil && P->info != X){
+        P = P->next;
+    }
+    if(P == nil){
+        return nil;
+    }
+    return P;
 }

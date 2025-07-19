@@ -43,7 +43,13 @@ void addAwalNode(List *L, infotype X);
 // FS : list bertambah node di akhir
 void addAkhirNode(List *L, infotype X);
 
+// IS : list tidak ada atau bisa saja ada
+// FS : list bertambah satu node di tengah list
+void addTengahNode(List *L, infotype X, infotype Y);
 
+// IS : list ada dan belum berkurang
+// FS : list ada dan berkurang 
+void delAwalNode(List *L, infotype X);
 
 /* MODUL NON KONTROL */
 // IS : List tidak di print ke terminal
@@ -53,6 +59,10 @@ void printList(List L);
 // IS : List tidak di print ke terminal
 // FS : List berhasil di print ke terminal secara reverse
 void printListReverse(List L);
+
+// IS : List ada dan terdapat beberapa node
+// FS : mengembalikan node yg dicari
+address searchNodeList(List L, infotype X);
 
 
 #endif
